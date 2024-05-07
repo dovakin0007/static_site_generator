@@ -1,0 +1,163 @@
+:root {
+  --font-sans: Helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  --font-serif: Georgia, Times new roman;
+  --font-mono: 'Cascadia Code', 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, monospace;
+}
+
+body.dark {
+  --clr-text: #e7e5e4;
+  --clr-bg: #1c1917;
+  --clr-hr: #292524;
+  --clr-mono: white;
+  --clr-pre: #292524;
+}
+
+body.light {
+  --clr-text: #1c1917;
+  --clr-mono: black;
+  --clr-bg: #e7e5e4;
+  --clr-hr: #a8a29e;
+  --clr-pre: #d4d4d4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+} 
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  width: 80%;
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  line-height: 1.4;
+  margin-block: 1rem;
+}
+
+ul:not(.listing),ol {
+  margin-left: 1rem;
+}
+
+ul li:not(.list_itm), ol {
+  margin-block: .5rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+pre {
+  background: var(--clr-pre);
+  padding-inline: .5rem;
+  border-radius: 3px;
+}
+
+h1,h2,h3 {
+  margin-block: .5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+
+h2 {
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25em 0;
+  border-bottom: 1px solid var(--clr-hr);
+  margin-bottom: 1rem;
+}
+
+.nav__logo {
+  color: var(--clr-mono);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+
+.nav__links a {
+  color: inherit;
+}
+
+.theme-btn {
+  background: none;
+  font-size: 1rem;
+  border: none;
+  text-decoration: underline;
+  color: var(--clr-text);
+  cursor: pointer;
+}
+
+.list__itm {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-serif);
+  margin-block: .5rem;
+}
+
+.list__itm a {
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+
+.list__itm time {
+  font-size: .95rem;
+  position: relative;
+}
+
+.list__hr {
+  flex: 1;
+  margin-inline: 0.5rem;
+  height: 1px;
+  border-top: var(--clr-hr) dotted 1px;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+@media screen and (max-width: 540px) {
+  body {
+    width: 90%;
+  }
+
+  .listing {
+    gap: 1.25rem;
+  }
+
+  .list__itm {
+    justify-content: normal;
+    flex-direction: column;
+  }
+
+
+  .list__hr {
+    display: none;
+  }
+}
